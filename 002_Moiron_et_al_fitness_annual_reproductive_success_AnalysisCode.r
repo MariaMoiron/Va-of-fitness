@@ -2,7 +2,7 @@
 # Unpublished manuscript, doi: tba
 # Moiron M, Charmantier A, Bouwhuis S
 
-# The code provided here is sufficient to replicate the simulations presented in the above paper
+# The code provided here is sufficient to replicate the analyses presented in the above paper.
 
 ######################################################
 # DATA ANALYSIS OF ANNUAL REPRODUCTIVE SUCCESS DATA
@@ -45,11 +45,11 @@ priorARS<- list(R = list(V = 1, nu = 1),
                                G3 = list(V = 1, nu = 1, alpha.mu =0, alpha.V = 1000)))
 
 # Running model
-mod<- MCMCglmm(ARS ~ 1 +age,
+mod<- MCMCglmm(ARS ~ 1 + age,
                random = ~ animal +ID.PE +YEAR,
                rcov = ~ units,
                ginverse = list(animal = my_inverse),
-               data = Data,
+               data = data,
                prior =priorARS,
                family = "poisson",
                nitt = NITT, thin = THIN, burnin = BURN)
