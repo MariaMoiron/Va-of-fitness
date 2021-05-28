@@ -23,7 +23,7 @@ library(beepr)
 
 # Loading data and formatting the phenotypic data and pedigree
 data <- read.table("fitness_data.txt", header=TRUE)
-ped<- read.table("pedigree.txt",header=TRUE)
+pedigree<- read.table("pedigree.txt",header=TRUE)
 
 # Retrieving year of birth
 years <- data[["year"]][match(pedigree[["animal"]], data[["chickID"]])]
