@@ -4,7 +4,6 @@
 
 # The code provided here is sufficient to replicate the simulations presented in the above paper
 
-
 ######################################################
 # DATA ANALYSIS OF ANNUAL REPRODUCTIVE SUCCESS DATA
 ######################################################
@@ -46,7 +45,7 @@ priorARS<- list(R = list(V = 1*0.03, nu = 1),
                                G3 = list(V = 1*0.5, nu = 1, alpha.mu =0, alpha.V = 1000)))
 
 # Running model
-mod<- MCMCglmm(fitness ~ 1 +age,
+mod<- MCMCglmm(ARS ~ 1 +age,
                random = ~ animal +ID.PE +YEAR,
                rcov = ~ units,
                ginverse = list(animal = my_inverse),
@@ -61,7 +60,8 @@ beep(1)
 
 summary(mod)
 
-# Assesing convergence 
+# Assesing convergence and auto-correlation of posterior distributions
+plot(mod$VCV)
 effectiveSize(mod$VCV)
 heidel.diag(mod$VCV)
 autocorr.diag(mod$VCV)
@@ -69,7 +69,6 @@ autocorr.diag(mod$VCV)
 # Random effects in latent scale
 round(posterior.mode(mod$VCV),3)
 round(HPDinterval(mod$VCV), 3)
-plot(mod$VCV)
 
 # Computing h2 and Ia
 df_pois <- data.frame(mu = as.vector(mod[["Sol"]][ , "(Intercept)"]),
