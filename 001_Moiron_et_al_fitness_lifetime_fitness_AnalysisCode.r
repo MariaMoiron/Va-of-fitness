@@ -4,7 +4,6 @@
 
 # The code provided here is sufficient to replicate the simulations presented in the above paper
 
-
 ######################################################
 # DATA ANALYSIS OF LIFETIME FITNESS DATA
 ######################################################
@@ -30,7 +29,7 @@ nsamp <- 1000
 BURN <- 10000; THIN <- 10000
 (NITT <- BURN + THIN*nsamp)
 
-# Seeting prior
+# Setting prior
 prior <- list(R = list(V = diag(2)/2, nu = 1, fix = 2),
               G = list(G1 = list(V = diag(2)/2, nu = 2, alpha.mu = c(0,0), alpha.V = diag(2)*1000),
                        G2 = list(V = diag(2)/2, nu = 2, alpha.mu = c(0,0), alpha.V = diag(2)*1000)))
@@ -53,7 +52,8 @@ beep(1)
 
 summary(mod)
 
-# Assesing convergence 
+# Assesing convergence and auto-correlation of posterior distributions 
+plot(mod$VCV)
 effectiveSize(mod$VCV)
 heidel.diag(mod$VCV)
 autocorr.diag(mod$VCV)
@@ -61,7 +61,6 @@ autocorr.diag(mod$VCV)
 # Random effects in latent scale
 round(posterior.mode(mod$VCV),3)
 round(HPDinterval(mod$VCV), 3)
-plot(mod$VCV)
 
 # Computing h2 and Ia for ZI component
 df_zi <- data.frame(mu = as.vector(mod[["Sol"]][ , "traitzi_fitness"]),
