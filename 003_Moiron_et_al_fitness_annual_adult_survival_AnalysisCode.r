@@ -2,7 +2,7 @@
 # Unpublished manuscript, doi: tba
 # Moiron M, Charmantier A, Bouwhuis S
 
-# The code provided here is sufficient to replicate the simulations presented in the above paper
+# The code provided here is sufficient to replicate the analyses presented in the above paper.
 
 ######################################################
 # DATA ANALYSIS OF ANNUAL ADULT SURVIVAL DATA
