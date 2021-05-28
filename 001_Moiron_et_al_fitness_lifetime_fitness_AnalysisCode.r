@@ -17,7 +17,15 @@ library(beepr)
 
 # Loading phenotypic data
 data <- read.table("fitness_data.txt", header=TRUE)
+
+# Formating response varibale
 data$fitness<-as.numeric(data$LRS_fl) #lifetime fitness data
+
+# Formating random effects
+data$animal = as.factor(data$ring.nr) #additive genetic effects
+data$YOB = as.factor(data$year.of.birth) #cohort effects
+
+# Formating fixed effects
 data$status = as.factor(data$status)  #two levels: alive or dead
 
 # Loading pedigree
@@ -37,7 +45,7 @@ prior <- list(R = list(V = diag(2)/2, nu = 1, fix = 2),
 # Running model
 mod<- MCMCglmm(fitness ~ trait-1+status,
                random = ~ idh(trait):animal +
-                          idh(trait):year,
+                          idh(trait):YOB,
                rcov = ~ idh(trait):units,
                data = data, 
                ginverse = list(animal = my_inverse), 
