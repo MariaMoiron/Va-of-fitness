@@ -21,7 +21,7 @@ library(QGglmm)
 library(pedantics)
 library(beepr)
 
-# Loading data and formatting the phenotypic data and pedigree
+# Loading phenotypic data and pedigree
 data <- read.table("fitness_data.txt", header=TRUE)
 pedigree<- read.table("pedigree.txt",header=TRUE)
 
