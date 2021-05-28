@@ -3,7 +3,7 @@
 # Moiron M, Charmantier A, Bouwhuis S
 
 # The code provided here is sufficient to replicate the simulations presented in the above paper, AND
-# replicates the code provided by de Villemereuil et al (2019)
+# replicates the code provided by de Villemereuil et al (2019) in the manuscript
 # with the title "Little Adaptive Potential in a Threatened Passerine Bird" published in Current Biology.
 # As such, please, use and cite the original source:
 # de Villemereuil et al (2019) MS doi: 10.1016/j.cub.2019.01.072
