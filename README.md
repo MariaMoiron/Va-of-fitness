@@ -1,5 +1,5 @@
 # Va-of-fitness
-This repository contains all materials used for a project on quantitative genetics of fitness using data from a wild common tern population. Specifically, the repository contains all R code used in the following study:
+This repository contains all materials used for a project on quantitative genetics of fitness using data from a wild common tern population. Specifically, the repository contains all R codes used in the following study:
 
 Moiron M, Charmantier A, Bouwhuis S; In preparation. The quantitative genetics of fitness in a wild bird population.
 Last two authors contributed equally to this work. DOI: tba
