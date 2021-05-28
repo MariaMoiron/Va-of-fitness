@@ -18,8 +18,8 @@ library(beepr)
 # Loading phenotypic data
 data <- read.table("fitness_data.txt", header=TRUE)
 
-# Formating response varibale
-data$AAS<-as.numeric(Data$AAS)  #annual adult success data
+# Formating response variable
+data$AAS<-as.numeric(data$AAS)  #annual adult survival data
 
 # Formating random effects
 data$ID.PE =as.factor(data$ring.nr) #permanent environmental effects
@@ -40,9 +40,9 @@ BURN <- 10000; THIN <- 10000
 
 # Setting prior
 priorAAS <- list(R = list(V = 1, fix = 1),
-              G = list(G1 = list(V = 1, nu = 2, alpha.mu = rep(0, 1), alpha.V = diag(1)*c(10)),
-                       G2 = list(V = 1, nu = 2, alpha.mu = rep(0, 1), alpha.V = diag(1)*c(10)),
-                       G3 = list(V = 1, nu = 2, alpha.mu = rep(0, 1), alpha.V = diag(1)*c(10))))
+              G = list(G1 = list(V = 1, nu = 2, alpha.mu = rep(0, 1), alpha.V = diag(1)*c(100)),
+                       G2 = list(V = 1, nu = 2, alpha.mu = rep(0, 1), alpha.V = diag(1)*c(100)),
+                       G3 = list(V = 1, nu = 2, alpha.mu = rep(0, 1), alpha.V = diag(1)*c(100))))
 
 # Running model
 mod<- MCMCglmm(AAS ~ 1+age,
