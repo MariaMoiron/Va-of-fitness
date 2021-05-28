@@ -47,6 +47,7 @@ vr_zi <- 1          # Residual variance (ZI)
 
 # Since heritability is not the best measure for additive genetic variance of lifetime fitnes, 
 # we used an evolvability (or additive genetic variance of relative fitness) of 0.01 for the Poisson component
+
 mu_pois <- 1.27    # Intercept (Poisson)
 va_pois <- 0.01    # Additive genetic variance (Poisson)
 vyear_pois <-0.12  # Year effect (Poisson)    
