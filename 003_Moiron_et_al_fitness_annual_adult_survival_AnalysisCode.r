@@ -101,4 +101,3 @@ out<- data.frame(mean.obs.mode = posterior.mode(as.mcmc(post[["mean.obs"]])),
                  Ia.mean       = mean(as.mcmc(post[["Ia.obs"]])),
                  Ia.low        = HPDinterval(as.mcmc(post[["Ia.obs"]]))[1],
                  Ia.high       = HPDinterval(as.mcmc(post[["Ia.obs"]]))[2])
-out
