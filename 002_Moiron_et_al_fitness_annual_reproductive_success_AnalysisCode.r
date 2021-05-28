@@ -18,8 +18,8 @@ library(beepr)
 # Loading phenotypic data
 data <- read.table("fitness_data.txt", header=TRUE)
 
-# Formating response varibale
-data$ARS<-as.numeric(Data$ARS)  #annual reproductive success data
+# Formating response variable
+data$ARS<-as.numeric(data$ARS)  #annual reproductive success data
 
 # Formating random effects
 data$ID.PE =as.factor(data$ring.nr) #permanent environmental effects
@@ -39,10 +39,10 @@ BURN <- 10000; THIN <- 10000
 (NITT <- BURN + THIN*nsamp)
 
 # Setting prior
-priorARS<- list(R = list(V = 1*0.03, nu = 1),
-                      G = list(G1 = list(V =1*0.03, nu = 1, alpha.mu =0, alpha.V = 1000),
-                               G2 = list(V = 1*0.1, nu = 1, alpha.mu =0, alpha.V = 1000),
-                               G3 = list(V = 1*0.5, nu = 1, alpha.mu =0, alpha.V = 1000)))
+priorARS<- list(R = list(V = 1, nu = 1),
+                      G = list(G1 = list(V =1, nu = 1, alpha.mu =0, alpha.V = 1000),
+                               G2 = list(V = 1, nu = 1, alpha.mu =0, alpha.V = 1000),
+                               G3 = list(V = 1, nu = 1, alpha.mu =0, alpha.V = 1000)))
 
 # Running model
 mod<- MCMCglmm(ARS ~ 1 +age,
