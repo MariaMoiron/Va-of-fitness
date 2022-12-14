@@ -1,8 +1,8 @@
 # Va-of-fitness
 This repository contains R-codes used for a project on quantitative genetics of fitness using data from a wild common tern population. Specifically, the repository contains R-codes used in the following study:
 
-Moiron M, Charmantier A, Bouwhuis S; In preparation. The quantitative genetics of fitness in a wild bird population.
-Last two authors contributed equally to this work. DOI: tba
+Moiron M, Charmantier A, Bouwhuis S (2022) Evolution. The quantitative genetics of fitness in a wild bird population.
+Last two authors contributed equally to this work. DOI: 10.1111/evo.14516
 
 For any further information, please contact: Maria Moiron, email: mariamoironc@gmail.com
 
