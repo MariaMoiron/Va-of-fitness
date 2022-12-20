@@ -1,4 +1,4 @@
-# Moiron_et_al_2022, Va-of-fitness
+# Moiron_et_al_2022 Va-of-fitness
 
 This repository contains R-codes used for a project on quantitative genetics of fitness using data from a wild common tern population. Specifically, the repository contains R-codes used in the following study:
 
